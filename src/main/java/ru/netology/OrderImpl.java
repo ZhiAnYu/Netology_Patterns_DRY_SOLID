@@ -18,12 +18,12 @@ public class OrderImpl implements Order{
     }
 
     @Override
-    public void repeatOrder(ArrayList<String> userBasket) {
+    public void repeatOrder(List<String> userBasket) {
         throw new RuntimeException("Not implemented");
     }
 
     @Override
-    public void cancelOrder(ArrayList<String> userBasket) {
+    public void cancelOrder(List<String> userBasket) {
         throw new RuntimeException("Not implemented");
     }
 }

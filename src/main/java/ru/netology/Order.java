@@ -7,7 +7,7 @@ public interface Order {
 
     void sendOrder(User user, List<String> userBasket);
 
-    void repeatOrder(ArrayList <String> userBasket);
+    void repeatOrder(List <String> userBasket);
 
-    void cancelOrder(ArrayList <String> userBasket);
+    void cancelOrder(List <String> userBasket);
 }

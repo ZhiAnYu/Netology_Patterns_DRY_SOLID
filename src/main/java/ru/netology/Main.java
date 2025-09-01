@@ -23,9 +23,9 @@ public class Main {
                 System.out.print("Готовы оформить заказ? Yes/No: ");
                 input = scanner.nextLine().toLowerCase();
                 if (input.equals("yes")){
-                    PaymentCard paymentCard = new PaymentCard();
+                    Payment paymentCard = new PaymentCard();
                     paymentCard.pay(); //ЗДЕСЬ: исключили проверку на оплату, после которой отправляем заказ
-                    OrderImpl userOrder = new OrderImpl();
+                    Order userOrder = new OrderImpl();
                     userOrder.sendOrder(user1,userBasket);
                     System.out.println("Хорошего дня!");
                     break;
