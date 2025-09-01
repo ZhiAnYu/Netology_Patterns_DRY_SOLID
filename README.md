@@ -23,7 +23,8 @@
 public static int[] inputCount = new int[PRODUCTS.length];
 public static int[] currentPrices = new int[PRICES.length];
 ```
-## 2. DRY: Вместо постоянного повтора кода для вывода на консоль списка товара для покупки использование метода showMenu(), вместо повтора кода рекомендаций использование метода advertising()
+## 2. DRY: 
+Вместо постоянного повтора кода для вывода списка товара для покупки  - использование метода showMenu(), вместо повтора кода для вывода рекомендаций  - использование метода advertising()
    
 ```java
     System.out.println("В нашем магазине есть: ");
@@ -92,7 +93,7 @@ public interface Order {
 
 *D - принцип инверсии зависимостей (Dependency Inversion Principle)* 
 
-Тип оплаты не будет влиять на программу. Главное, чтобы проверка на isPay вернула true
+ Тип оплаты не будет влиять на программу. Главное, чтобы проверка на isPay вернула true
 
 ```java
 Payment paymentCard = new PaymentCard();
