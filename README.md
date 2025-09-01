@@ -15,3 +15,39 @@
 * Простая рекомендательная система для покупок (+)      можно поменять 1. Самый выбираемый товар/2. Самый НЕвыбираемый товар/ 3. Рандомный товар
 
 ## Реализация
+1. Избегание магических чисел: вместо конкретных чисел, которые обозначают различные товары (в примере это 4 вида) используем длину массива, в который и вносим сами товары. Тогда при добавлении новых товаров все корректно поменяется
+
+```java
+public static int[] inputCount = new int[PRODUCTS.length];
+public static int[] currentPrices = new int[PRICES.length];
+```
+2. DRY: Вместо постоянного повтора кода для вывода на консоль списка товара для покупки использование метода showMenu(), вместо повтора кода рекомендаций использование метода advertising()
+   
+```java
+    System.out.println("В нашем магазине есть: ");
+        for (int i = 0; i < Basket.PRODUCTS.length; i++) {
+            System.out.println((i + 1) + " "
+                    + Basket.PRODUCTS[i].getNameItem() + " "
+                    + Basket.PRICES[i] + " руб/ед");
+        }
+```
+
+```java
+public static void advertising() {
+        int[] popItem = new int[PRODUCTS.length];
+        int maxIndex = 0;
+        for (int i = 0; i < PRODUCTS.length; i++) {
+            popItem[i] = PRODUCTS[i].getRatingItem();
+            if (popItem[i] > popItem[maxIndex]) {
+                maxIndex = i;
+            }
+        }
+        System.out.println("Наш самый популярный товар на сегодня: " + PRODUCTS[maxIndex].getNameItem());
+    }
+```
+
+
+```java
+Basket.showMenu();
+Basket.advertising();
+```
